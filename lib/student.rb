@@ -84,7 +84,7 @@ class Student
     sql = <<-SQL
     SELECT * FROM STUDENTS WHERE GRADE = 10 LIMIT 1;
     SQL
-    DB[:conn].execute(sql).map { |student| new_from_db(student)}
+    DB[:conn].execute(sql).map { |student| new_from_db(student)}.first
   end
 
   def self.all_students_in_grade_X
